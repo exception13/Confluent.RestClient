@@ -13,5 +13,15 @@ namespace Confluent.RestClient
         {
             get { return new TimeSpan(0,0,0,3); }
         }
+
+        public string AuthenticationSchema
+        {
+            get { return null; }
+        }
+
+        public string AuthenticationParams
+        {
+            get { return null; }
+        }
     }
 }

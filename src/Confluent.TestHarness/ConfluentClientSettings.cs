@@ -12,6 +12,8 @@ namespace Confluent.TestHarness
         }
 
         public string KafkaBaseUrl { get; private set; }
-        public TimeSpan RequestTimeout{ get; private set; }
+        public TimeSpan RequestTimeout { get; private set; }
+        public string AuthenticationSchema { get; private set; }
+        public string AuthenticationParams { get; private set; }
     }
 }

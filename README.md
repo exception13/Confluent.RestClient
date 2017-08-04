@@ -29,6 +29,22 @@ public class MyConfluentClientSettings : IConfluentClientSettings
             return TimeSpan.Parse(ConfigurationManager.AppSettings["Confluent.RequestTimeout"]);
         }
     }
+
+    public string AuthenticationSchema
+    {
+        get
+        {
+            return ConfigurationManager.AppSettings["Confluent.AuthenticationSchema"];
+        }
+    }
+
+    public string AuthenticationParams
+    {
+        get
+        {
+            return ConfigurationManager.AppSettings["Confluent.AuthenticationParams"];
+        }
+    }
 }
 ```
 

@@ -28,7 +28,13 @@ namespace Confluent.RestClient
         public ConfluentClient(IConfluentClientSettings clientSettings)
         {
             _clientSettings = clientSettings;
+
             _client = new HttpClient { Timeout = clientSettings.RequestTimeout };
+
+            if (_clientSettings.AuthenticationSchema != null & _clientSettings.AuthenticationParams != null)
+            {
+                _client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue(_clientSettings.AuthenticationSchema, _clientSettings.AuthenticationParams);
+            }
         }
 
         public async Task<ConfluentResponse<List<string>>> GetTopicsAsync()
